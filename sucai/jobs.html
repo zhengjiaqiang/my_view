@@ -1,0 +1,659 @@
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+                <meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<title>仿派代网自适应触屏版手机wap门户网站模板招聘首页</title>
+
+		<link type="text/css" rel="stylesheet" href="styles/shouwei/jobs/gbolbal_20141010.css" />
+
+		<link type="text/css" rel="stylesheet" href="styles/shouwei/jobs/zhaopin_new.css?v=20141121502" />
+
+	</head>
+
+	<body class="big_box">
+
+		<p id="top" class="top1 clearfix">
+
+			<a class="logo" href="default.htm"><img src="images/shouwei/new_logo.gif?v=1" height="33" width="118"></a>
+
+                   
+
+                       
+
+                                                        <a class="tcity" id='tcity' href="javascript:void(0)" onClick="go_url()">湖北</a>
+
+                                                    <a href="login.html" title="我的">
+
+  			<span class="touxiang">                            
+
+                                                        <img  src="images/shouwei/jobs/person.gif" />
+
+                              				
+
+  			</span>		
+
+		</a>
+
+		</p>
+
+                <script language="javascript">
+
+                    var l='i';
+
+                    var bprovince='湖北'; 
+
+                    var gbprovince='';   
+
+                    var province='13'; 
+
+                    var gprovince='';   
+
+	        
+
+                              if(bprovince==''){
+
+                                  bprovince=gbprovince; 
+
+                              }if(province==''){
+
+                                  province=gprovince; 
+
+                              }
+
+              var province_list = {
+
+            "北京":"2","上海":"25","广东":"6","浙江":"31","青海":"21",
+
+            "山东":"22","山西":"23","陕西":"24","四川":"26","天津":"27",
+
+            "西藏":"28","新疆":"29","云南":"30","重庆":"32","香港":"33",
+
+            "澳门":"34","宁夏":"20","内蒙古":"19","辽宁":"18","安徽":"3",
+
+            "福建":"4","甘肃":"5","广西":"7","贵州":"8","海南":"9",
+
+            "河北":"10","河南":"11","黑龙江":"12","湖北":"13","湖南":"14",
+
+            "吉林":"15","江苏":"16","江西":"17","台湾":"35"
+
+        };
+
+        function go_url(){
+
+            var s=$('#search_word').val();            
+
+            var t=$('#typecj').val();
+
+            location.href='jobs.html?act=province&search_word='+s+'&typecj='+t+'&bprovince='+bprovince+'&province='+province_list[bprovince]+'&l='+l;          
+
+        }
+
+        
+
+        </script>
+
+                
+
+        <div class="nav">
+
+	<a class="c96 font14 fl nav_list" href="home.html" title="首页">首页</a>
+
+	<a class="c96 font14 fl nav_list" href="index.html" title="论坛">论坛</a>
+
+	<a class="c96 font14 fl nav_list" href="bbs.html" title="商道">商道</a>
+
+	<a class="c96 font14 fl nav_list"  href="event.html" title="活动">活动</a>
+
+	<a class="black bold c96 font14 fl nav_list last"  href="jobs.html" title="招聘">招聘</a>
+
+	<p class="clear"></p>
+
+	</div><div id="allmap"></div>
+
+<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GkAvftPC6NKs6KaKe1nFVWBf"></script>
+
+<style type="text/css"> 
+
+     
+
+.loading{ 
+
+position: fixed; 
+
+width:100%; 
+
+height:40px; 
+
+display: none;
+
+text-align:center; 
+
+top: 45%;
+
+
+
+
+
+}
+
+.fl{float: left;}
+
+ input[type="button"], input[type="submit"], input[type="reset"],input[type='text'] {
+
+
+
+-webkit-appearance: none;
+
+ border-radius: 0!important;
+
+}
+
+textarea {  -webkit-appearance: none;border-radius: 0!important;} 
+
+ 
+
+</style>
+
+<script language="javascript"> 
+
+   var pagecnt=1;
+
+   var page=1;
+
+   var urls_employmng = "jobs.html";
+
+      
+
+        
+
+        
+
+        var foot=200;
+
+        var flg=0;
+
+        window.onload=function(){
+
+        	/*搜索*/
+
+        	var oSel4=document.getElementById('sel_job');
+
+            var oSel5=document.getElementById('sel_com');
+
+            var oDiv4=document.getElementById('sele');
+
+            oSel4.onclick=function(){
+
+                        if(oSel5.style.display=='none'){
+
+                                oSel5.style.display='block';
+
+                                oDiv4.style.backgroundImage='url(images/shouwei/zhaopin/btn_up.gif)';
+
+                        }else{
+
+                                oSel5.style.display='none';
+
+                        }                        
+
+                }    
+
+              oSel5.onclick=function(){
+
+                        if(oSel4.innerHTML=='职位'){                            
+
+                            $('#typecj').val('com');
+
+                            $('#search_word').attr('placeholder','派代网');
+
+                                oSel4.innerHTML='公司';
+
+                                oSel5.innerHTML='职位';
+
+                                oSel5.style.display='none';
+
+                                oDiv4.style.backgroundImage='url(images/shouwei/zhaopin/btn_down.gif)';
+
+                        }else{                            
+
+                            $('#typecj').val('jobs');
+
+                            $('#search_word').attr('placeholder','运营总监');
+
+                                oSel5.innerHTML='公司';
+
+                                oSel4.innerHTML='职位';
+
+                                oSel5.style.display='none';                                
+
+                                oDiv4.style.backgroundImage='url(images/shouwei/zhaopin/btn_down.gif)';
+
+                        }                                                
+
+                }
+
+            /*搜索结束*/    
+
+                
+
+            $(window).scroll(function(){ 
+
+                
+
+                var scrollTop = document.body.scrollTop||document.documentElement.scrollTop; 
+
+                
+
+                var pageHeight = $(document).height(); 
+
+                
+
+                var viewHeight = $(window).height(); 
+
+                
+
+                
+
+                if((scrollTop+viewHeight)>(pageHeight-foot)){ 
+
+                    if(pagecnt > 1 && page<pagecnt){
+
+                        var loading=document.getElementById("loading");
+
+                        loading.style.display = "block"; 
+
+                        
+
+                        if(flg==1){
+
+                            return;
+
+                        }
+
+                        flg=1;
+
+                        page=page+1;
+
+                        setTimeout(function(){
+
+                        $.ajaxSettings.async=false;
+
+                        $.ajax({
+
+                            type : "GET",
+
+                            url : urls_employmng,
+
+                            data : "act=aj002&page=" + page+"&province="+province+"&search_word=&bprovince="+bprovince,
+
+                            success : function(data) {
+
+                                loading.style.display = "none";
+
+                                var ret_html='' ;
+
+                                 var json_response = eval("(" + data + ")");
+
+                                for(var v in json_response){
+
+                                   ret_html+= "<dl class='joblist b_none pl15'><dt class=' font16 pt15'><a class='c92' href='?act=jobs_info&jid="+json_response[v].id;
+
+                                   ret_html+="&bprovince="+bprovince+"&province="+province+"'>"+json_response[v].name+"</a><span><a class='company' href='?act=company_info&cid=";
+
+                                   ret_html+=json_response[v].cid+"&bprovince="+bprovince+"&province="+province+"'>"+json_response[v].name_s+"</a></span></dt>";
+
+                                   ret_html+="<dd class='job_acticle mt3'><span class='job_wage '>";
+
+                                   if(json_response[v].treatment_type==0){
+
+                                       if(json_response[v].treatment_txt1!=json_response[v].treatment_txt2){
+
+                                           ret_html+=json_response[v].treatment_txt1+"K-"+json_response[v].treatment_txt2+"K";
+
+                                       }else{
+
+                                           ret_html+=json_response[v].treatment_txt1+"K";
+
+                                       }
+
+                                   }else{
+
+                                       ret_html+="面议";
+
+                                   }
+
+                                   
+
+                                   ret_html+="</span>|<span class=''>";
+
+                                   if(json_response[v].region_name!=''){
+
+                                        ret_html+=json_response[v].region_name+"</span>|<span>";
+
+                                   }else{
+
+                                        ret_html+="其他</span>|<span>";
+
+                                   }
+
+                                   if(json_response[v].education!=''){
+
+                                        ret_html+=json_response[v].education+"</span>|<span>";
+
+                                   }else{
+
+                                        ret_html+="不限</span>|<span>";
+
+                                   }
+
+                                   if(json_response[v].work_level==1){
+
+                                       ret_html+="应届毕业生";
+
+                                   }else if(json_response[v].work_level==2){
+
+                                       ret_html+="1年以下";
+
+                                   }else if(json_response[v].work_level==3){
+
+                                       ret_html+="1-3年";
+
+                                   }else if(json_response[v].work_level==4){
+
+                                       ret_html+="3-5年";
+
+                                   }else if(json_response[v].work_level==5){
+
+                                       ret_html+="5-10年";
+
+                                   }else{
+
+                                       ret_html+="不限";
+
+                                   }
+
+                                   ret_html+="</span>|<span>"+json_response[v].time_public.substr(0,10);
+
+                                   ret_html+="</span></dd>";
+
+                                   ret_html+="</dl>";
+
+                                  
+
+                                   
+
+                                  }  
+
+                                $("#content_list").html($("#content_list").html()+ret_html);
+
+                                
+
+                                flg=0;
+
+                            }
+
+                        });
+
+                    },1000);
+
+                        
+
+                       
+
+                        
+
+                     }
+
+                } 
+
+            });
+
+        }
+
+        
+
+        function get_url(key){
+
+            location.href='jobs.html?act=job_list&search_word='+key+'&bprovince='+bprovince+'&province='+province_list[bprovince];          
+
+        }        
+
+
+
+        </script>
+
+	<div class="main">
+
+		<div class="search pb15">
+
+		<p class="instructions pl15 pb15 pt15 "><a class="c56 font12" href="javascript:;" style="">招聘</a><img src="images/shouwei/jobs/right.gif"></p>
+
+		<form action="jobs.html" method="get" name="searchForm" class="pl15 clearfix">
+
+		<div id="sele" class="fl">
+
+			<p id="sel_job">职位</p>
+
+			<p id="sel_com">公司</p>
+
+		</div>
+
+		<input class="search_text fl" type="text" id='search_word' name='search_word' value='' placeholder="输入职位名称" />
+
+                        <input type="hidden" name="act" value='job_list'>
+
+                        <input type="hidden" id='province' name="province" value='13'>
+
+                        <input type="hidden" id='bprovince' name="bprovince" value='湖北'>
+
+                        <input type="hidden" id='typecj' name="typecj" value='jobs'>
+
+        <input class="search_button fl" type="submit" name='sub' value=" " />
+
+		</form>
+
+		</div>
+
+		<div class="hot_work">
+
+			<p class="hot_title hot_title2 pl15 pb15 pt15">热门职位</p>
+
+			<ul class="clearfix">
+
+                            <li><a href="javascript:void(0)" onClick="get_url('淘宝运营');">淘宝运营</a></li>
+
+				
+
+				<li><a href="javascript:void(0)" onClick="get_url('运营经理');">运营经理</a></li>
+
+				<li><a href="javascript:void(0)" onClick="get_url('淘宝店长');">淘宝店长</a></li>
+
+				<li><a href="javascript:void(0)" onClick="get_url('推广');">推广</a></li>				
+
+				<li><a href="javascript:void(0)" onClick="get_url('客服');">客服</a></li>
+
+				<li><a href="javascript:void(0)" onClick="get_url('设计');">设计</a></li>                                
+
+			</ul>
+
+                        
+
+			<p class="hot_title pl15">最新职位</p>
+
+                        <div id="content_list">
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs1.html">营销专员/CRM专员</a><span><a class="company" href="company.html">上上品</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">面议</span>|<span class="">湖北</span>|<span>不限</span>|<span>不限
+
+                                             </span>|<span>2014-12-20</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs1.html">文员电脑打字员</a><span><a class="company" href="company.html">元创广告有限公司</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">4K-6K</span>|<span class="">湖北</span>|<span>不限</span>|<span>不限
+
+                                             </span>|<span>2014-12-20</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=140567&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">淘宝美工</a><span><a class="company" href="jobs.html?act=company_info&cid=23557&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">新疆御农果业</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">3K-5K</span>|<span class="">湖北</span>|<span>不限</span>|<span>1-3年
+
+                                             </span>|<span>2014-12-17</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=125561&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">淘宝运营经理</a><span><a class="company" href="jobs.html?act=company_info&cid=18046&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">湖北钓鱼王集团</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">面议</span>|<span class="">湖北</span>|<span>不限</span>|<span>不限
+
+                                             </span>|<span>2014-11-28</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=38141&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">资深客服</a><span><a class="company" href="jobs.html?act=company_info&cid=3016&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">多美商城</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">2K-4K</span>|<span class="">湖北</span>|<span>大专</span>|<span>不限
+
+                                             </span>|<span>2014-11-27</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=111128&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">淘宝运营</a><span><a class="company" href="jobs.html?act=company_info&cid=12480&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">盛世壹品</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">5K-10K</span>|<span class="">湖北</span>|<span>本科</span>|<span>不限
+
+                                             </span>|<span>2014-11-27</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=134962&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">网站SEO优化专员</a><span><a class="company" href="jobs.html?act=company_info&cid=21807&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">众人行</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">面议</span>|<span class="">湖北</span>|<span>不限</span>|<span>不限
+
+                                             </span>|<span>2014-11-25</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=139630&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">急聘在家兼职客服03</a><span><a class="company" href="jobs.html?act=company_info&cid=23180&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">煌今物流有限公司</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">4K-8K</span>|<span class="">湖北</span>|<span>不限</span>|<span>不限
+
+                                             </span>|<span>2014-11-08</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=139448&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">电子商务主管</a><span><a class="company" href="jobs.html?act=company_info&cid=23195&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">吉力电器</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">5K-8K</span>|<span class="">湖北</span>|<span>高中</span>|<span>不限
+
+                                             </span>|<span>2014-11-04</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=139399&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">网店设计</a><span><a class="company" href="jobs.html?act=company_info&cid=23197&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">传承钟表</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">面议</span>|<span class="">湖北</span>|<span>大专</span>|<span>不限
+
+                                             </span>|<span>2014-10-27</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=139079&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">淘宝运营主管</a><span><a class="company" href="jobs.html?act=company_info&cid=23110&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">天之和</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">4.5K-5K</span>|<span class="">湖北</span>|<span>大专</span>|<span>不限
+
+                                             </span>|<span>2014-10-16</span></dd>
+
+		   	 	</dl>
+
+                                				<dl class="joblist b_none pl15">
+
+		  			<dt class=" font16 pt15"><a class="c92" href="jobs.html?act=jobs_info&jid=138703&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">天猫运营</a><span><a class="company" href="jobs.html?act=company_info&cid=22078&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">摩尔天空信息</a></span></dt>
+
+		    		<dd class="job_acticle mt3"><span class="job_wage ">面议</span>|<span class="">湖北</span>|<span>大专</span>|<span>不限
+
+                                             </span>|<span>2014-10-13</span></dd>
+
+		   	 	</dl>
+
+                                                            </div>
+
+                         
+
+                        <div id="new_content_list">
+
+                            <div id="loading" class="loading"> 
+
+                            <img src="images/shouwei/jobs/loading.gif" /> 
+
+                            </div>
+
+                        </div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<!--尾部-->
+<div id="foot">
+	<div class="foot_left fl" style="margin-left: 2%;">
+		<a class="font13  mr12 c64" title="电脑版" href="../www.paidai.com/?id=1_2F">电脑版</a>
+		<a class="font13  mr12 c64" title="触屏版" href="shouji">触屏版</a>
+        		<a href="login.html" title="登录" class="font13 mr12 c64">登&nbsp;录</a>
+			<p style="font-size: 9px;">Copyright © 2007- 2014 Paidai.com All Rights Reserved</p>
+	</div>
+	<div class="foot_right fr" style="margin-right: 2%;">
+		<a class="font13 fr c64 to_top" title="回顶部" href="#top">顶部</a>
+	</div>
+
+<p class="clear"></p>
+</div>
+
+
+ <script>
+    
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["weixin","qzone","tsina","tqq","tieba"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","tieba"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    window._bd_share_config = {
+		share : [{
+			"tag" : "share_2",
+			"bdSize" : 32,			
+		}]
+	};
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+                <meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+<title>仿派代网自适应触屏版手机wap门户网站模板招聘正文页</title>
+
+		<link type="text/css" rel="stylesheet" href="styles/shouwei/jobs/gbolbal_20141010.css" />
+
+		<link type="text/css" rel="stylesheet" href="styles/shouwei/jobs/zhaopin_new.css?v=20141121502" />
+
+	</head>
+
+	<body class="big_box">
+
+		<p id="top" class="top1 clearfix">
+
+			<a class="logo" href="default.htm"><img src="images/shouwei/new_logo.gif?v=1" height="33" width="118"></a>
+
+                   
+
+                       
+
+                                                    <a class="tcity" id='tcity' href="javascript:void(0)" onClick="go_url()">湖北</a>
+
+                                              <a href="login.html" title="我的">
+
+  			<span class="touxiang">                            
+
+                                                        <img  src="images/shouwei/jobs/person.gif" />
+
+                              				
+
+  			</span>		
+
+		</a>
+
+		</p>
+
+                <script language="javascript">
+
+                    var l='j';
+
+                    var bprovince=''; 
+
+                    var gbprovince='湖北';   
+
+                    var province=''; 
+
+                    var gprovince='13';   
+
+	        
+
+                              if(bprovince==''){
+
+                                  bprovince=gbprovince; 
+
+                              }if(province==''){
+
+                                  province=gprovince; 
+
+                              }
+
+              var province_list = {
+
+            "北京":"2","上海":"25","广东":"6","浙江":"31","青海":"21",
+
+            "山东":"22","山西":"23","陕西":"24","四川":"26","天津":"27",
+
+            "西藏":"28","新疆":"29","云南":"30","重庆":"32","香港":"33",
+
+            "澳门":"34","宁夏":"20","内蒙古":"19","辽宁":"18","安徽":"3",
+
+            "福建":"4","甘肃":"5","广西":"7","贵州":"8","海南":"9",
+
+            "河北":"10","河南":"11","黑龙江":"12","湖北":"13","湖南":"14",
+
+            "吉林":"15","江苏":"16","江西":"17","台湾":"35"
+
+        };
+
+        function go_url(){
+
+            var s=$('#search_word').val();            
+
+            var t=$('#typecj').val();
+
+            location.href='jobs.html?act=province&search_word='+s+'&typecj='+t+'&bprovince='+bprovince+'&province='+province_list[bprovince]+'&l='+l;          
+
+        }
+
+        
+
+        </script>
+
+                
+
+        <div class="nav">
+
+	<a class="c96 font14 fl nav_list" href="home.html" title="首页">首页</a>
+
+	<a class="c96 font14 fl nav_list" href="index.html" title="论坛">论坛</a>
+
+	<a class="c96 font14 fl nav_list" href="bbs.html" title="商道">商道</a>
+
+	<a class="c96 font14 fl nav_list"  href="event.html" title="活动">活动</a>
+
+	<a class="black bold c96 font14 fl nav_list last"  href="jobs.html" title="招聘">招聘</a>
+
+	<p class="clear"></p>
+
+	</div><script src="http://www.paidai.com/scripts/jquery-1.4.2.min.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="http://www.paidai.com/scripts/jquery.boxy.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GkAvftPC6NKs6KaKe1nFVWBf"></script>
+
+<script type="text/javascript">
+
+    var pro='湖北';
+
+    var city='荆州';
+
+    var add='湖北省荆州市沙市区北京路荣鑫花园';
+
+	 
+
+	 /*地图弹出
+
+	$(function(){
+
+ $(".company_address").click(function(event){
+
+  var e=window.event || event;
+
+  if(e.stopPropagation){
+
+   e.stopPropagation();
+
+  }else{
+
+   e.cancelBubble = true;
+
+  }  
+
+  $(".map_bg").show();
+
+ });
+
+ $(".map_bg").click(function(event){
+
+  var e=window.event || event;
+
+  if(e.stopPropagation){
+
+   e.stopPropagation();
+
+  }else{
+
+   e.cancelBubble = true;
+
+  }
+
+ });
+
+ document.onclick = function(){
+
+  $(".map_bg").hide();
+
+ };
+
+})*/
+
+$(document).ready(function(){
+
+	$(".big_box,.close_map").click(function(){
+
+　　$(".map_bg").hide();
+
+});
+
+$(".company_address").click(function(e){
+
+　　$(".map_bg").show();
+
+　　e.stopPropagation();//阻止冒泡到body
+
+});
+
+$(".map_bg").click(function(e){//自己要阻止
+
+　　e.stopPropagation();//阻止冒泡到body
+
+});
+
+})
+
+	 
+
+</script>
+
+
+
+	<div class="main">
+
+		<div class="search">
+
+		<p class="instructions pl15 pb15 pt15 "><a class="c56 font12" href="jobs.html">招聘</a><img src="images/shouwei/jobs/right.gif"><a class="c56 font12" href="jobs.html?act=job_list&bprovince=_25E6_25B9_2596_25E5_258C_2597&province=13">职位列表</a><img src="images/shouwei/jobs/right.gif"><a class="c56 font12" href="javascript:;">职位详情</a></p>
+
+		
+
+		</div>
+
+		<div class="jinfo">
+
+		<div class="jobs_info pl15">
+
+	<p class="c56  font16 mb15 pt15">营销专员/CRM专员</p>
+
+	<p class="clearfix">
+
+		<span class="job_money">面议</span>
+
+		<span class="dline"></span>
+
+		<span class="job_school">不限</span>
+
+		<span class="dline"></span>
+
+		<span class="job_experience">不限
+
+                                             </span>
+
+		<span class="dline"></span>
+
+			</p>
+
+		<p class="company_address">地址：        湖北荆州
+
+        湖北省荆州市沙市区北京路荣鑫花园</p>
+
+	</div>
+
+	
+
+	<div class="company_bg pl15 clearfix" onClick="location='company.html'">
+
+	<p class="fr" style="margin-top: 20px; margin-right: 7%;"><img src="images/shouwei/zhaopin/right_gray.png"></p>
+
+	
+
+	<div class="job_com_info  job_com_info2 fr">
+
+	<p>
+
+		<a href="company.html" class="company c56">上上品</a>
+
+	</p>
+
+	<p class="company_people"><span style="margin-left: 0;">                
+
+                其他
+
+                </span>|
+
+            <span>20-99人
+
+                </span>|
+
+                <span>互联网/电子商务</span></p>
+
+	</div>
+
+	<p class="com_img"><img src="uploadpath/company_logo/2014-5/201453010299_941829.jpg" onerror="this.onerror=null;this.src='http://static.epaidai.com/uploadpath/company_logo/def_logo.gif';" width="50"></p>
+
+   	</div>
+
+    <!--
+
+    	<p class="job_acticle mt12">|<span>发布日期：14:16</span></p>
+
+    -->
+
+    
+
+    <div class="com_wal pl15">
+
+    <p class="c45a font16">职位描述：</p>
+
+    
+
+    <ul class="company_welfare">
+
+    	<li>任职要求：<br />
+1、有较好数据分析、数据调取能力、对客户评价进行整理及分析，出具相应分析报告；2、催化会员活跃度，提升会员销售额占比，促进老顾客N次消费，提高用户的忠诚度；3、熟悉电商客户关系管理模块,善于总结、分析、挖掘、创新，配合店铺活动策划做CRM营销及每次活动后的数据分析总结工作；<br />
+<br />
+4、熟悉会员营销，熟悉各种会员营销工具，包括CRM系统、微信、EDM、SMS、TM、DM等等一些运营工具促进顾客二次消费<br />
+<br />
+5、配合主管及推广人员做好相关工作。<br />
+<br />
+任职要求：<br />
+<br />
+1、年龄：35岁以下，电子商务等相关专业，1年以上同岗位工作经验；2、对《数据赢家》系统有一定了解者优先；3、学习能力强，逻辑清晰、思路清晰；4、有责任心，配合他人，团队合作意识，有团队归属感。<br />
+<br />
+工作时间：08:30-17:30，每周休一天。<br />
+工作日补贴8元餐费 每月休息4天，试用期签订正式合同后办理养老保险（五险）！公司成长空间巨大。<br />
+联系电话：18672110100     0176-8103337</li>
+
+    </ul>
+
+    </div>
+
+    <div class="recruitment font16">
+
+              <input id='btt' class="r_send" type="button" value="投递简历" onClick="return apply_position();">
+
+          </div>
+
+		
+
+		
+
+		
+
+		</div>
+
+	</div>
+
+	<div class="map_bg" style="width: 96% ;height: 250px; position: fixed; top: 22%; left: 2%; z-index: 1001; display: none; border:1px solid #E0DFDF;">
+
+			<a class="close_map"><img src="images/shouwei/jobs/close_map.gif?v=1" style="position: absolute; top: 0; right: 0; z-index: 100;"/></a>
+
+		<div class="map" id="allmap" style="width: 100% ;height: 250px; ">
+
+		</div>
+
+	</div>
+
+	
+
+<script type="text/javascript">
+
+    var cur_position_id = 139512;
+
+    var cur_company_id = 21641;
+
+    var cur_user_id = 0;
+
+    var Boxy_Dialog = null;
+
+    var urls_position_apply = "../z.paidai.com/position_apply.html";
+
+    var urls_employmng = "jobs.html";
+
+    var td=0;
+
+    
+
+    function trim(str) {
+
+        str = str || "";
+
+        return str.replace(/(^\s*)|(\s*$)/g, '');
+
+    }
+
+    function closed(){
+
+        var clos;
+
+        clos=document.getElementById("closed");
+
+        clos.style.display="none";
+
+
+
+    }
+
+    function apply_position() {
+
+        if(td>=15){
+
+            alert('每日只可投递15份简历');
+
+            return false;
+
+        }
+
+        //var next_link = urls_position_apply + "?jid=" + cur_position_id + "&cid=" + cur_company_id;
+
+        if(cur_user_id == "0") {
+
+            //window.location = next_link;
+
+            window.location = 'login.html';
+
+            //d_login('position/'+cur_position_id);
+
+           //alert('请登录。');
+
+        } else {
+
+            //alert(urls_employmng);
+
+            $.ajax({
+
+                type : "GET",
+
+                url : urls_employmng,
+
+                data : "act=ajs01&uid=" + cur_user_id,
+
+                success : function(html) {
+
+                    var ret_html = trim(html);
+
+                    
+
+                    if(ret_html == "norecord") {
+
+                        Boxy_Dialog = new Boxy(ret_html);            
+
+            //window.location = next_link;
+
+                    } else {
+
+                        //alert(ret_html);
+
+                        
+
+                        Boxy_Dialog = new Boxy(ret_html);
+
+                    }
+
+                }
+
+            });
+
+        }
+
+    }
+
+   var map = new BMap.Map("allmap"); 	   
+
+    if(add){
+
+        var myGeo = new BMap.Geocoder();                
+
+        myGeo.getPoint(add, function(point){
+
+                if (point) {                                
+
+                    map.centerAndZoom(point,16);
+
+                    map.panBy(250,150);
+
+                    map.addOverlay(new BMap.Marker(point));
+
+                }else{
+
+                    map.centerAndZoom(pro+city,12);   
+
+                }
+
+        }, city);
+
+    }else{
+
+        map.centerAndZoom(pro+city,12);
+
+    }
+
+    
+
+        </script>
+
+<div id="foot">
+
+	<div class="foot_left fl" style="margin-left: 2%;">
+
+		<a class="font13  mr12 c64" title="电脑版" href="../www.paidai.com/?id=1_2F">电脑版</a>
+
+		<a class="font13  mr12 c64" title="触屏版" href="shouji">触屏版</a>
+
+        		<a href="login.html" title="登录" class="font13 mr12 c64">登&nbsp;录</a>
+
+			<p style="font-size: 9px;">Copyright © 2007- 2014 Paidai.com All Rights Reserved</p>
+
+	</div>
+
+	<div class="foot_right fr" style="margin-right: 2%;">
+
+		<a class="font13 fr c64 to_top" title="回顶部" href="#top">顶部</a>
+
+	</div>
+
+
+
+<p class="clear"></p>
+
+</div>
+
+ <script>
+
+    
+
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["weixin","qzone","tsina","tqq","tieba"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","tieba"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+    window._bd_share_config = {
+
+		share : [{
+
+			"tag" : "share_2",
+
+			"bdSize" : 32,			
+
+		}]
+
+	};
+
+    
+
+</script>
+
+</body>
+
+</html>
