@@ -1,0 +1,140 @@
+        <?xml version="1.0" encoding="UTF-8"?>
+
+        <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+
+        <html xmlns="http://www.w3.org/1999/xhtml">
+
+        <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+        <meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+
+
+        <meta xmlns="http://www.w3.org/1999/xhtml" name="MobileOptimized" content="240" />
+
+        <meta name="apple-itunes-app" content="app-id=716585349, app-argument=http://appdp:275">
+
+        <meta name="MobileOptimized" content="470" />
+
+        <title>搞笑图</title>
+        <base href="__PUBLIC__/home/" />
+        <link type="text/css" rel="stylesheet" href="styles/shouwei/jobs/gbolbal_20141010.css" />
+
+        <script language="javascript">
+
+
+
+        if (top.location != location) top.location.href = location.href;
+
+
+
+        </script>
+
+        </head>
+
+        <body>	
+        <style>
+
+        #link img{ max-width: 100%;}
+
+        #oTop img{ max-width: 100%;}
+
+        #oTop{width:100%; position:relative;}
+
+        #oLink1{ position:absolute; top:0px; left:0px; width:14%; height:35%;}
+
+        #oLink2{ position:absolute; top:0px; right:0px; width:86%; height:100%;}
+
+        .nav a{width:20%;}
+
+        .nav a.last{
+
+        border-right:none;}
+
+
+
+        </style>
+
+        <script language="javascript">
+
+
+
+        var ua = navigator.userAgent,
+
+        isIphone = /iPhone/.test(ua),
+
+        isIpad = /iPad/.test(ua),
+
+        isSafari = /Version/i.test(ua),
+
+        version = /OS[7-9](_\d+){2}/i.test(ua),<!--/OS [7-9]_\d[_\d]/i.test(ua)-->
+
+        isAndroid = /Android/i.test(ua) || /Linux/.test(ua);
+
+        isMobile = /AppleWebKit.*Mobile.*/.test(ua); //是否是移动终端
+
+
+
+
+
+        if(isIphone && !isIpad && !isSafari && version){
+
+        var oLink = document.createElement('a');				
+
+        oLink.id='link';
+
+        oLink.style.width="100%";
+
+        oLink.href='http://www.17sucai.com/';
+
+        oLink.innerHTML = '<img width="640" src="images/shouwei/WAP-IOS.jpg">';
+
+        var logo = document.getElementById('top');
+
+        document.body.insertBefore(oLink,logo);
+
+        }
+
+        if(isMobile && isAndroid && !isIpad){
+
+        var oTop = document.createElement('div');
+
+        oTop.id = 'oTop';
+
+        active_br.innerHTML = '<a href="http://www.17sucai.com/"><img style="width:100%; max-width:100%" src="images/shouwei/WAP-Android-new.jpg"></a><a href="javascript:;" id="oLink1"></a>';
+
+        document.getElementById('oLink1').onclick = function(){
+
+        active_br.style.display = 'none';
+
+        }
+
+        }
+
+        </script>
+        <link rel="stylesheet" href="styles/shouwei/bbslist.css?v=2013013007" type="text/css" />
+        <div id="main" style="background-color:#EEE;">
+        <?php foreach ($tu_list as $k => $v): ?>
+        <h1 class="font16 c32">{$v.title}</h1>
+        <div class="content font16 c32">
+        <p style="text-indent:2em;"><span style="font-size:14px;"></span></p>
+        <p style="text-align:center">
+        <img src="{$v.img}" title="" border="0" hspace="0" vspace="0" width="500" height="350" />
+        </p>
+        </div>
+        <?php endforeach ?>
+
+        <!--商道详情页加两个按钮-->
+        <p class="clear"></p>
+        <!--按钮结束-->
+
+        <div id="page" class="mt10">  
+        <div class="clear"></div>
+        </div>
+        </div>
+        </body>
+        </html>
